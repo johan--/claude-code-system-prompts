@@ -1,6 +1,6 @@
 # Claude Code System Prompts
 
-This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.0.22](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.0.22) (October 17th, 2025).**
+This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.0.24](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.0.24) (October 20th, 2025).**
 
 Why multiple "system prompts?"
 
@@ -106,4 +106,5 @@ Text for large system reminders.
 **Additional notes for some Tool Desscriptions**
 
 - [Tool Description: Bash (Git commit and PR creation instructions)](./system-prompts/tool-description-bash-git-commit-and-pr-creation-instructions.md) (**1598** tks) - Instructions for creating git commits and GitHub pull requests.
+- [Tool Description: Bash (sandbox note)](./system-prompts/tool-description-bash-sandbox-note.md) (**567** tks) - Note about bash command sandboxing.
 - [Tool Description: Task (async return note)](./system-prompts/tool-description-task-async-return-note.md) (**202** tks) - Message returned to the model when a subagent launched successfully.
