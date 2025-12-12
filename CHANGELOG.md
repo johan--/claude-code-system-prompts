@@ -4,6 +4,17 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# [2.0.62](https://github.com/Piebald-AI/claude-code-system-prompts/commit/69bdc5ab93ccf071b44eb4aac29507ccd64d0b25)
+
+_+381 tokens_
+
+- **NEW:** `AskUserQuestion` tool description - includes guidance on recommending options by adding "(Recommended)" to labels
+- Main system prompt: Added instruction to complete tasks fully without stopping mid-task or claiming context limits prevent completion
+- `EnterPlanMode` tool: Major rewrite encouraging proactive use for non-trivial tasks; expanded "when to use" examples including new features and code modifications; shifted guidance from "err on implementation" to "err on planning"
+- `Skill` tool: Added blocking requirement to invoke skill tool immediately as first action when relevant, before generating any other response
+- `Task` tool: Added `resume` parameter documentation for continuing agents with preserved context; clarified agent ID return for follow-up work
+- `WebFetch` tool: Simplified MCP tool preference note (removed "All MCP-provided tools start with mcp__")
+
 #### [2.0.61](https://github.com/Piebald-AI/claude-code-system-prompts/commit/09e9a9f1961da38ce3b9d6f771f071e43b4746ea)
 
 <sub>_No changes to the system prompts in v2.0.61._</sub>
