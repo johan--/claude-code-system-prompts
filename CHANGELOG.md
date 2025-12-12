@@ -4,6 +4,12 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# [2.0.63](https://github.com/Piebald-AI/claude-code-system-prompts/commit/f3953ffe61eef3dbf6cdb232041f4b39bd2f4a7b)
+
+_+10 tokens_
+
+- Main system prompt: Added `BUILD_TIME` to config variables interpolation
+
 # [2.0.62](https://github.com/Piebald-AI/claude-code-system-prompts/commit/69bdc5ab93ccf071b44eb4aac29507ccd64d0b25)
 
 _+381 tokens_
