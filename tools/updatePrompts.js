@@ -416,8 +416,13 @@ function updateReadme(promptsByFilename, version, releaseDate, versionCount) {
   const npmUrl = `https://www.npmjs.com/package/@anthropic-ai/claude-code/v/${version}`;
   const dateStr = releaseDate ? ` (${releaseDate})` : '';
 
-  lines[2] = `This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v${version}](${npmUrl})${dateStr}.**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across ${versionCount} versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)`;
-
+  // Find the intro line dynamically (it starts with "This repository contains")
+  const introLineIndex = lines.findIndex(line => line.startsWith('This repository contains'));
+  if (introLineIndex !== -1) {
+    lines[introLineIndex] = `This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v${version}](${npmUrl})${dateStr}.**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across ${versionCount} versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)`;
+  } else {
+    console.warn('Warning: Could not find intro line starting with "This repository contains"');
+  }
   // Organize prompts by category
   const categories = {
     'Agent Prompts': {
