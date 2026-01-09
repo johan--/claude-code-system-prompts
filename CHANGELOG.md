@@ -4,6 +4,14 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# [2.1.2](https://github.com/Piebald-AI/claude-code-system-prompts/commit/25150a99c6a1bc916417476178008dbcfa740aa0)
+
+_-374 tokens_
+
+- **NEW:** Agent Prompt: Bash command risk classifier - classifies shell commands by risk level (LOW/MEDIUM/HIGH) to determine permission requirements
+- **REMOVED:** Agent Prompt: Bash output summarization - system prompt for determining whether bash command output should be summarized
+- **REMOVED:** Agent Prompt: Plan verification agent - agent prompt for verifying that the main agent correctly executed a plan
+
 #### [2.1.1](https://github.com/Piebald-AI/claude-code-system-prompts/commit/9f507fd)
 
 <sub>_No changes to the system prompts in v2.1.1._</sub>
