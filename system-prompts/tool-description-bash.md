@@ -1,7 +1,7 @@
 <!--
 name: 'Tool Description: Bash'
 description: Description for the Bash tool, which allows Claude to run shell commands
-ccVersion: 2.1.3
+ccVersion: 2.1.4
 variables:
   - CUSTOM_TIMEOUT_MS
   - MAX_TIMEOUT_MS
@@ -14,6 +14,7 @@ variables:
   - EDIT_TOOL_NAME
   - WRITE_TOOL_NAME
   - GIT_COMMIT_AND_PR_CREATION_INSTRUCTION
+  - BASH_BACKGROUND_TASK_NOTES_FN
 -->
 Executes a given bash command in a persistent shell session with optional timeout, ensuring proper handling and security measures.
 
@@ -40,18 +41,18 @@ Usage notes:
   - You can specify an optional timeout in milliseconds (up to ${CUSTOM_TIMEOUT_MS()}ms / ${CUSTOM_TIMEOUT_MS()/60000} minutes). If not specified, commands will timeout after ${MAX_TIMEOUT_MS()}ms (${MAX_TIMEOUT_MS()/60000} minutes).
   - It is very helpful if you write a clear, concise description of what this command does. For simple commands, keep it brief (5-10 words). For complex commands (piped commands, obscure flags, or anything hard to understand at a glance), add enough context to clarify what it does.
   - If the output exceeds ${MAX_OUTPUT_CHARS()} characters, output will be truncated before being returned to you.
-  - You can use the \`run_in_background\` parameter to run the command in the background. Only use this if you don't need the result immediately and are OK being notified when the command completes later. You do not need to check the output right away - you'll be notified when it finishes. You do not need to use '&' at the end of the command when using this parameter.
   ${BASH_TOOL_NAME()}
+  ${BASH_TOOL_EXTRA_NOTES()}
   - Avoid using Bash with the \`find\`, \`grep\`, \`cat\`, \`head\`, \`tail\`, \`sed\`, \`awk\`, or \`echo\` commands, unless explicitly instructed or when these commands are truly necessary for the task. Instead, always prefer using the dedicated tools for these commands:
-    - File search: Use ${BASH_TOOL_EXTRA_NOTES} (NOT find or ls)
-    - Content search: Use ${SEARCH_TOOL_NAME} (NOT grep or rg)
-    - Read files: Use ${GREP_TOOL_NAME} (NOT cat/head/tail)
-    - Edit files: Use ${READ_TOOL_NAME} (NOT sed/awk)
-    - Write files: Use ${EDIT_TOOL_NAME} (NOT echo >/cat <<EOF)
+    - File search: Use ${SEARCH_TOOL_NAME} (NOT find or ls)
+    - Content search: Use ${GREP_TOOL_NAME} (NOT grep or rg)
+    - Read files: Use ${READ_TOOL_NAME} (NOT cat/head/tail)
+    - Edit files: Use ${EDIT_TOOL_NAME} (NOT sed/awk)
+    - Write files: Use ${WRITE_TOOL_NAME} (NOT echo >/cat <<EOF)
     - Communication: Output text directly (NOT echo/printf)
   - When issuing multiple commands:
-    - If the commands are independent and can run in parallel, make multiple ${WRITE_TOOL_NAME} tool calls in a single message. For example, if you need to run "git status" and "git diff", send a single message with two ${WRITE_TOOL_NAME} tool calls in parallel.
-    - If the commands depend on each other and must run sequentially, use a single ${WRITE_TOOL_NAME} call with '&&' to chain them together (e.g., \`git add . && git commit -m "message" && git push\`). For instance, if one operation must complete before another starts (like mkdir before cp, Write before Bash for git operations, or git add before git commit), run these operations sequentially instead.
+    - If the commands are independent and can run in parallel, make multiple ${GIT_COMMIT_AND_PR_CREATION_INSTRUCTION} tool calls in a single message. For example, if you need to run "git status" and "git diff", send a single message with two ${GIT_COMMIT_AND_PR_CREATION_INSTRUCTION} tool calls in parallel.
+    - If the commands depend on each other and must run sequentially, use a single ${GIT_COMMIT_AND_PR_CREATION_INSTRUCTION} call with '&&' to chain them together (e.g., \`git add . && git commit -m "message" && git push\`). For instance, if one operation must complete before another starts (like mkdir before cp, Write before Bash for git operations, or git add before git commit), run these operations sequentially instead.
     - Use ';' only when you need to run commands sequentially but don't care if earlier commands fail
     - DO NOT use newlines to separate commands (newlines are ok in quoted strings)
   - Try to maintain your current working directory throughout the session by using absolute paths and avoiding usage of \`cd\`. You may use \`cd\` if the User explicitly requests it.
@@ -62,4 +63,4 @@ Usage notes:
     cd /foo/bar && pytest tests
     </bad-example>
 
-${GIT_COMMIT_AND_PR_CREATION_INSTRUCTION()}
+${BASH_BACKGROUND_TASK_NOTES_FN()}

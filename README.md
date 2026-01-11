@@ -31,7 +31,7 @@ Download it and try it out for free!  **https://piebald.ai/**
 
 [![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge.svg)](https://github.com/hesreallyhim/awesome-claude-code)
 
-This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.1.3](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.1.3) (January 9th, 2026).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 62 versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)
+This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.1.4](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.1.4) (January 10th, 2026).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 63 versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)
 
 **This repository is updated within minutes of each Claude Code release.  See the [CHANGELOG](./CHANGELOG.md), and follow [@PiebaldAI](https://x.com/PiebaldAI) on X for a summary of the system prompt changes in each release.**
 
@@ -145,7 +145,7 @@ Text for large system reminders.
 ### Builtin Tool Descriptions
 
 - [Tool Description: AskUserQuestion](./system-prompts/tool-description-askuserquestion.md) (**194** tks) - Tool description for asking user questions..
-- [Tool Description: Bash](./system-prompts/tool-description-bash.md) (**1125** tks) - Description for the Bash tool, which allows Claude to run shell commands.
+- [Tool Description: Bash](./system-prompts/tool-description-bash.md) (**1069** tks) - Description for the Bash tool, which allows Claude to run shell commands.
 - [Tool Description: Computer](./system-prompts/tool-description-computer.md) (**161** tks) - Main description for the Chrome browser computer automation tool.
 - [Tool Description: Edit](./system-prompts/tool-description-edit.md) (**278** tks) - Tool description for performing exact string replacements in files.
 - [Tool Description: EnterPlanMode](./system-prompts/tool-description-enterplanmode.md) (**970** tks) - Tool description for entering plan mode to explore and design implementation approaches.
@@ -158,7 +158,7 @@ Text for large system reminders.
 - [Tool Description: NotebookEdit](./system-prompts/tool-description-notebookedit.md) (**121** tks) - Tool description for editing Jupyter notebook cells.
 - [Tool Description: ReadFile](./system-prompts/tool-description-readfile.md) (**439** tks) - Tool description for reading files.
 - [Tool Description: Skill](./system-prompts/tool-description-skill.md) (**444** tks) - Tool description for executing skills in the main conversation.
-- [Tool Description: Task](./system-prompts/tool-description-task.md) (**1227** tks) - Tool description for launching specialized sub-agents to handle complex tasks.
+- [Tool Description: Task](./system-prompts/tool-description-task.md) (**1264** tks) - Tool description for launching specialized sub-agents to handle complex tasks.
 - [Tool Description: TodoWrite](./system-prompts/tool-description-todowrite.md) (**2167** tks) - Tool description for creating and managing task lists.
 - [Tool Description: WebFetch](./system-prompts/tool-description-webfetch.md) (**265** tks) - Tool description for web fetch functionality.
 - [Tool Description: WebSearch](./system-prompts/tool-description-websearch.md) (**334** tks) - Tool description for web search functionality.
