@@ -1,7 +1,7 @@
 <!--
 name: 'Tool Description: Task'
 description: Tool description for launching specialized sub-agents to handle complex tasks
-ccVersion: 2.1.4
+ccVersion: 2.1.15
 variables:
   - TASK_TOOL
   - AGENT_TYPE_REGISTRY_STRING
@@ -10,6 +10,7 @@ variables:
   - GET_SUBSCRIPTION_TYPE_FN
   - IS_TRUTHY_FN
   - PROCESS_OBJECT
+  - FALSE
   - BASH_TOOL
   - TASK_TOOL_OBJECT
   - WRITE_TOOL
@@ -33,7 +34,7 @@ When NOT to use the ${TASK_TOOL} tool:
 Usage notes:
 - Always include a short description (3-5 words) summarizing what the agent will do${GET_SUBSCRIPTION_TYPE_FN()!=="pro"?`
 - Launch multiple agents concurrently whenever possible, to maximize performance; to do that, use a single message with multiple tool uses`:""}
-- When the agent is done, it will return a single message back to you. The result returned by the agent is not visible to the user. To show the user the result, you should send a text message back to the user with a concise summary of the result.${!IS_TRUTHY_FN(PROCESS_OBJECT.env.CLAUDE_CODE_DISABLE_BACKGROUND_TASKS)?`
+- When the agent is done, it will return a single message back to you. The result returned by the agent is not visible to the user. To show the user the result, you should send a text message back to the user with a concise summary of the result.${!IS_TRUTHY_FN(PROCESS_OBJECT.env.CLAUDE_CODE_DISABLE_BACKGROUND_TASKS)&&!FALSE()?`
 - You can optionally run agents in the background using the run_in_background parameter. When an agent runs in the background, the tool result will include an output_file path. To check on the agent's progress or retrieve its results, use the ${READ_TOOL} tool to read the output file, or use ${BASH_TOOL} with \`tail\` to see recent output. You can continue working while background agents run.`:""}
 - Agents can be resumed using the \`resume\` parameter by passing the agent ID from a previous invocation. When resumed, the agent continues with its full previous context preserved. When NOT resuming, each invocation starts fresh and you should provide a detailed task description with all necessary context.
 - When the agent is done, it will return a single message back to you along with its agent ID. You can use this ID to resume the agent later if needed for follow-up work.
@@ -42,7 +43,8 @@ Usage notes:
 - The agent's outputs should generally be trusted
 - Clearly tell the agent whether you expect it to write code or just to do research (search, file reads, web fetches, etc.), since it is not aware of the user's intent
 - If the agent description mentions that it should be used proactively, then you should try your best to use it without the user having to ask for it first. Use your judgement.
-- If the user specifies that they want you to run agents "in parallel", you MUST send a single message with multiple ${TASK_TOOL_OBJECT.name} tool use content blocks. For example, if you need to launch both a build-validator agent and a test-runner agent in parallel, send a single message with both tool calls.
+- If the user specifies that they want you to run agents "in parallel", you MUST send a single message with multiple ${TASK_TOOL_OBJECT.name} tool use content blocks. For example, if you need to launch both a build-validator agent and a test-runner agent in parallel, send a single message with both tool calls.${FALSE()?`
+- The run_in_background, name, team_name, and mode parameters are not available in this context. Only synchronous subagents are supported.`:""}
 
 Example usage:
 

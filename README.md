@@ -31,7 +31,7 @@ Download it and try it out for free!  **https://piebald.ai/**
 
 [![Mentioned in Awesome Claude Code](https://awesome.re/mentioned-badge.svg)](https://github.com/hesreallyhim/awesome-claude-code)
 
-This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.1.14](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.1.14) (January 20th, 2026).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 72 versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)
+This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.1.15](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.1.15) (January 21st, 2026).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 73 versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)
 
 **This repository is updated within minutes of each Claude Code release.  See the [CHANGELOG](./CHANGELOG.md), and follow [@PiebaldAI](https://x.com/PiebaldAI) on X for a summary of the system prompt changes in each release.**
 
@@ -157,7 +157,7 @@ Text for large system reminders.
 - [Tool Description: NotebookEdit](./system-prompts/tool-description-notebookedit.md) (**121** tks) - Tool description for editing Jupyter notebook cells.
 - [Tool Description: ReadFile](./system-prompts/tool-description-readfile.md) (**439** tks) - Tool description for reading files.
 - [Tool Description: Skill](./system-prompts/tool-description-skill.md) (**444** tks) - Tool description for executing skills in the main conversation.
-- [Tool Description: Task](./system-prompts/tool-description-task.md) (**1264** tks) - Tool description for launching specialized sub-agents to handle complex tasks.
+- [Tool Description: Task](./system-prompts/tool-description-task.md) (**1311** tks) - Tool description for launching specialized sub-agents to handle complex tasks.
 - [Tool Description: TodoWrite](./system-prompts/tool-description-todowrite.md) (**2167** tks) - Tool description for creating and managing task lists.
 - [Tool Description: ToolSearch](./system-prompts/tool-description-toolsearch.md) (**520** tks) - Tool description for loading and searching deferred tools before use.
 - [Tool Description: WebFetch](./system-prompts/tool-description-webfetch.md) (**297** tks) - Tool description for web fetch functionality.
@@ -166,5 +166,5 @@ Text for large system reminders.
 
 **Additional notes for some Tool Desscriptions**
 
-- [Tool Description: Bash (Git commit and PR creation instructions)](./system-prompts/tool-description-bash-git-commit-and-pr-creation-instructions.md) (**1386** tks) - Instructions for creating git commits and GitHub pull requests.
+- [Tool Description: Bash (Git commit and PR creation instructions)](./system-prompts/tool-description-bash-git-commit-and-pr-creation-instructions.md) (**1522** tks) - Instructions for creating git commits and GitHub pull requests.
 - [Tool Description: Bash (sandbox note)](./system-prompts/tool-description-bash-sandbox-note.md) (**454** tks) - Note about bash command sandboxing.
