@@ -4,6 +4,14 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# [2.1.15](https://github.com/Piebald-AI/claude-code-system-prompts/commit/011066d)
+
+_+183 tokens_
+
+- Tool Description: Bash (Git commit and PR creation instructions) - expanded Git Safety Protocol with specific list of destructive commands and added detailed explanation about potential data loss; clarified that `--amend` should be avoided after pre-commit hook failures; added guidance to prefer staging specific files by name rather than using "git add -A" or "git add ." to avoid accidentally including sensitive files (.env, credentials) or large binaries
+- Tool Description: Task - updated background agent output retrieval instructions from using TaskOutput tool to reading output_file path with Read tool or using Bash with `tail` to see recent output; added conditional note about run_in_background, name, team_name, and mode parameters not being available in certain contexts
+
+
 # [2.1.14](https://github.com/Piebald-AI/claude-code-system-prompts/commit/8533e3b)
 
 _-1,153 tokens_
