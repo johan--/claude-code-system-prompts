@@ -1,20 +1,15 @@
 <!--
 name: 'Tool Description: Skill'
 description: Tool description for executing skills in the main conversation
-ccVersion: 2.1.19
+ccVersion: 2.1.23
 variables:
-  - FORMAT_SKILLS_AS_XML_FN
-  - LIMITED_COMMANDS
+  - SKILL_TAG_NAME
 -->
 Execute a skill within the main conversation
 
-When users ask you to perform tasks, check if any of the available skills below can help complete the task more effectively. Skills provide specialized capabilities and domain knowledge.
+When users ask you to perform tasks, check if any of the available skills match. Skills provide specialized capabilities and domain knowledge.
 
-When users ask you to run a "slash command" or reference "/<something>" (e.g., "/commit", "/review-pr"), they are referring to a skill. Use this tool to invoke the corresponding skill.
-
-Example:
-  User: "run /commit"
-  Assistant: [Calls Skill tool with skill: "commit"]
+When users reference a "slash command" or "/<something>" (e.g., "/commit", "/review-pr"), they are referring to a skill. Use this tool to invoke it.
 
 How to invoke:
 - Use this tool with the skill name and optional arguments
@@ -25,13 +20,9 @@ How to invoke:
   - \`skill: "ms-office-suite:pdf"\` - invoke using fully qualified name
 
 Important:
-- When a skill is relevant, you must invoke this tool IMMEDIATELY as your first action
-- NEVER just announce or mention a skill in your text response without actually calling this tool
-- This is a BLOCKING REQUIREMENT: invoke the relevant Skill tool BEFORE generating any other response about the task
-- Skills listed below are available for invocation
+- Available skills are listed in system-reminder messages in the conversation
+- When a skill matches the user's request, this is a BLOCKING REQUIREMENT: invoke the relevant Skill tool BEFORE generating any other response about the task
+- NEVER mention a skill without actually calling this tool
 - Do not invoke a skill that is already running
 - Do not use this tool for built-in CLI commands (like /help, /clear, etc.)
-- If you see a <${FORMAT_SKILLS_AS_XML_FN}> tag in the current conversation turn (e.g., <${FORMAT_SKILLS_AS_XML_FN}>/commit</${FORMAT_SKILLS_AS_XML_FN}>), the skill has ALREADY been loaded and its instructions follow in the next message. Do NOT call this tool - just follow the skill instructions directly.
-
-Available skills:
-${LIMITED_COMMANDS}
+- If you see a <${SKILL_TAG_NAME}> tag in the current conversation turn, the skill has ALREADY been loaded - follow the instructions directly instead of calling this tool again

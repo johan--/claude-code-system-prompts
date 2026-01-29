@@ -1,7 +1,7 @@
 <!--
 name: 'Tool Description: TeammateTool'
 description: Tool for managing teams and coordinating teammates in a swarm
-ccVersion: 2.1.21
+ccVersion: 2.1.23
 -->
 
 # TeammateTool
@@ -142,7 +142,7 @@ When you spawn teammates:
 - They will send you messages when they complete tasks or need help
 - These messages appear automatically as new conversation turns (like user messages)
 - If you're busy (mid-turn), messages are queued and delivered when your turn ends
-- The UI shows "Queued teammate messages" when messages are waiting
+- The UI shows a brief notification with the sender's name when messages are waiting
 
 Messages will be delivered automatically.
 
