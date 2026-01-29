@@ -4,6 +4,16 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# [2.1.23](https://github.com/Piebald-AI/claude-code-system-prompts/commit/44566a0)
+
+_-383 tokens_
+
+- **NEW:** System Reminder: /btw side question - System reminder for /btw slash command side questions without tools
+- **REMOVED:** Agent Prompt: Exit plan mode with swarm - System reminder for when ExitPlanMode is called with `isSwarm` set to true
+- System Prompt: Main system prompt - Removed trailing period after SECURITY_POLICY variable
+- Tool Description: Skill - Simplified and streamlined: removed examples section, condensed important notes, changed from listing available skills inline to referencing system-reminder messages, updated variable references (FORMAT_SKILLS_AS_XML_FN → SKILL_TAG_NAME, removed LIMITED_COMMANDS)
+- Tool Description: TeammateTool - Updated UI notification description: now shows "a brief notification with the sender's name" instead of "Queued teammate messages" when messages are waiting
+
 #### [2.1.22](https://github.com/Piebald-AI/claude-code-system-prompts/commit/5c57ba3)
 
 <sub>_No changes to the system prompts in v2.1.22._</sub>
