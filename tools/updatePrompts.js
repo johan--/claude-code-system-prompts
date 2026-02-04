@@ -21,8 +21,17 @@ if (!ANTHROPIC_API_KEY) {
   process.exit(1);
 }
 
-const readFileSync = (file) => readFileSyncOrig(file, 'utf-8').replace(/\r\n/g, "\n");
-const writeFileSync = (file, content) => writeFileSyncOrig(file, content.replace(/\n/g, "\r\n"));
+const isWindows = process.platform === 'win32';
+
+const readFileSync = (file) => {
+  const content = readFileSyncOrig(file, 'utf-8');
+  return isWindows ? content.replace(/\r\n/g, "\n") : content;
+};
+
+const writeFileSync = (file, content) => {
+  const output = isWindows ? content.replace(/\n/g, "\r\n") : content;
+  writeFileSyncOrig(file, output);
+};
 
 /**
  * Count tokens using Anthropic's token counting API
