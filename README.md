@@ -34,7 +34,7 @@ Download it and try it out for free!  **https://piebald.ai/**
 > [!important]
 > **NEW (January 23, 2026): We've added all of Claude Code's ~40 system reminders to this list&mdash;see [System Reminders](#system-reminders).**
 
-This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.1.30](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.1.30) (February 3rd, 2026).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 87 versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)
+This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.1.31](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.1.31) (February 3rd, 2026).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 88 versions since v2.0.14.  From the team behind [<img src="https://github.com/Piebald-AI/piebald/raw/main/assets/logo.svg" width="15"> **Piebald.**](https://piebald.ai/)
 
 **This repository is updated within minutes of each Claude Code release.  See the [changelog](./CHANGELOG.md), and follow [@PiebaldAI](https://x.com/PiebaldAI) on X for a summary of the system prompt changes in each release.**
 
@@ -123,13 +123,15 @@ Parts of the main system prompt.
 
 - [**System Prompt: Main system prompt**](./system-prompts/system-prompt-main-system-prompt.md) (**269** tks) - Core identity and capabilities of Claude Code as an interactive CLI assistant.
 - [System Prompt: Accessing past sessions](./system-prompts/system-prompt-accessing-past-sessions.md) (**352** tks) - Instructions for searching past session data including memory summaries and transcript logs.
+- [System Prompt: Agent memory instructions](./system-prompts/system-prompt-agent-memory-instructions.md) (**337** tks) - Instructions for including memory update guidance in agent system prompts.
+- [System Prompt: Censoring assistance with malicious activities](./system-prompts/system-prompt-censoring-assistance-with-malicious-activities.md) (**98** tks) - Guidelines for assisting with authorized security testing, defensive security, CTF challenges, and educational contexts while censoring requests for malicious activities.
 - [System Prompt: Chrome browser MCP tools](./system-prompts/system-prompt-chrome-browser-mcp-tools.md) (**156** tks) - Instructions for loading Chrome browser MCP tools via MCPSearch before use.
 - [System Prompt: Claude in Chrome browser automation](./system-prompts/system-prompt-claude-in-chrome-browser-automation.md) (**759** tks) - Instructions for using Claude in Chrome browser automation tools effectively.
 - [System Prompt: Doing tasks](./system-prompts/system-prompt-doing-tasks.md) (**445** tks) - Instructions for performing software engineering tasks.
 - [System Prompt: Executing actions with care](./system-prompts/system-prompt-executing-actions-with-care.md) (**522** tks) - Instructions for executing actions carefully..
 - [System Prompt: Git status](./system-prompts/system-prompt-git-status.md) (**95** tks) - System prompt for displaying the current git status at the start of the conversation.
 - [System Prompt: Hooks Configuration](./system-prompts/system-prompt-hooks-configuration.md) (**1461** tks) - System prompt for hooks configuration.  Used for above Claude Code config skill..
-- [System Prompt: Insights at a glance summary](./system-prompts/system-prompt-insights-at-a-glance-summary.md) (**570** tks) - Generates a concise 4-part summary (what's working, hindrances, quick wins, ambitious workflows) for the insights report.
+- [System Prompt: Insights at a glance summary](./system-prompts/system-prompt-insights-at-a-glance-summary.md) (**569** tks) - Generates a concise 4-part summary (what's working, hindrances, quick wins, ambitious workflows) for the insights report.
 - [System Prompt: Insights friction analysis](./system-prompts/system-prompt-insights-friction-analysis.md) (**139** tks) - Analyzes aggregated usage data to identify friction patterns and categorize recurring issues.
 - [System Prompt: Insights on the horizon](./system-prompts/system-prompt-insights-on-the-horizon.md) (**148** tks) - Identifies ambitious future workflows and opportunities for autonomous AI-assisted development.
 - [System Prompt: Insights session facets extraction](./system-prompts/system-prompt-insights-session-facets-extraction.md) (**310** tks) - Extracts structured facets (goal categories, satisfaction, friction) from a single Claude Code session transcript.
@@ -144,11 +146,12 @@ Parts of the main system prompt.
 - [System Prompt: Tone and style](./system-prompts/system-prompt-tone-and-style.md) (**500** tks) - Guidelines for communication tone and response style.
 - [System Prompt: Tool Use Summary Generation](./system-prompts/system-prompt-tool-use-summary-generation.md) (**171** tks) - Prompt for generating summaries of tool usage.
 - [System Prompt: Tool execution denied](./system-prompts/system-prompt-tool-execution-denied.md) (**144** tks) - System prompt for when tool execution is denied.
+- [System Prompt: Tool permission mode](./system-prompts/system-prompt-tool-permission-mode.md) (**151** tks) - Guidance on tool permission modes and handling denied tool calls.
 - [System Prompt: Tool usage policy](./system-prompts/system-prompt-tool-usage-policy.md) (**564** tks) - Policies and guidelines for tool usage.
 
 ### System Reminders
 
-Text for large system reminders.
+All Claude Code system reminders.
 
 - [System Reminder: /btw side question](./system-prompts/system-reminder-btw-side-question.md) (**172** tks) - System reminder for /btw slash command side questions without tools.
 - [System Reminder: Agent mention](./system-prompts/system-reminder-agent-mention.md) (**45** tks) - Notification that user wants to invoke an agent.
@@ -163,6 +166,7 @@ Text for large system reminders.
 - [System Reminder: File truncated](./system-prompts/system-reminder-file-truncated.md) (**74** tks) - Notification that file was truncated due to size.
 - [System Reminder: Hook additional context](./system-prompts/system-reminder-hook-additional-context.md) (**35** tks) - Additional context from a hook.
 - [System Reminder: Hook blocking error](./system-prompts/system-reminder-hook-blocking-error.md) (**52** tks) - Error from a blocking hook command.
+- [System Reminder: Hook stopped continuation prefix](./system-prompts/system-reminder-hook-stopped-continuation-prefix.md) (**12** tks) - Prefix for hook stopped continuation messages.
 - [System Reminder: Hook stopped continuation](./system-prompts/system-reminder-hook-stopped-continuation.md) (**30** tks) - Message when a hook stops continuation.
 - [System Reminder: Hook success](./system-prompts/system-reminder-hook-success.md) (**29** tks) - Success message from a hook.
 - [System Reminder: Invoked skills](./system-prompts/system-reminder-invoked-skills.md) (**33** tks) - List of skills invoked in this session.
@@ -209,11 +213,11 @@ Text for large system reminders.
 - [Tool Description: Skill](./system-prompts/tool-description-skill.md) (**326** tks) - Tool description for executing skills in the main conversation.
 - [Tool Description: Sleep](./system-prompts/tool-description-sleep.md) (**180** tks) - Tool for waiting/sleeping with early wake capability on user input.
 - [Tool Description: TaskCreate](./system-prompts/tool-description-taskcreate.md) (**558** tks) - Tool description for TaskCreate tool.
-- [Tool Description: Task](./system-prompts/tool-description-task.md) (**1215** tks) - Tool description for launching specialized sub-agents to handle complex tasks.
-- [Tool Description: TeammateTool operation parameter](./system-prompts/tool-description-teammatetool-operation-parameter.md) (**72** tks) - Description of the operation parameter for the TeammateTool.
+- [Tool Description: Task](./system-prompts/tool-description-task.md) (**1340** tks) - Tool description for launching specialized sub-agents to handle complex tasks.
 - [Tool Description: TeammateTool](./system-prompts/tool-description-teammatetool.md) (**2393** tks) - Tool for managing teams and coordinating teammates in a swarm.
 - [Tool Description: TodoWrite](./system-prompts/tool-description-todowrite.md) (**2167** tks) - Tool description for creating and managing task lists.
-- [Tool Description: ToolSearch](./system-prompts/tool-description-toolsearch.md) (**792** tks) - Tool description for loading and searching deferred tools before use.
+- [Tool Description: ToolSearch extended](./system-prompts/tool-description-toolsearch-extended.md) (**690** tks) - Extended usage instructions for ToolSearch including query modes and examples.
+- [Tool Description: ToolSearch](./system-prompts/tool-description-toolsearch.md) (**144** tks) - Tool description for loading and searching deferred tools before use.
 - [Tool Description: WebFetch](./system-prompts/tool-description-webfetch.md) (**297** tks) - Tool description for web fetch functionality.
 - [Tool Description: WebSearch](./system-prompts/tool-description-websearch.md) (**331** tks) - Tool description for web search functionality.
 - [Tool Description: Write](./system-prompts/tool-description-write.md) (**127** tks) - Tool for writing files to the local filesystem.
